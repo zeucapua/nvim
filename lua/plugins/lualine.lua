@@ -1,5 +1,9 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "kyazdani42/nvim-web-devicons" },
-	opts = {}, -- automaticalls the setup function
+	config = function()
+		require("lualine").setup({
+			options = { theme = "horizon" }
+		})
+	end
 }
