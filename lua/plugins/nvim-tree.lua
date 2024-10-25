@@ -26,6 +26,11 @@ return {
 					},
 				},
 			},
+			view = {
+				float = {
+					enable = true,
+				}
+			}
 			-- 	git = {
 			-- 		ignore = false,
 			-- 	},
