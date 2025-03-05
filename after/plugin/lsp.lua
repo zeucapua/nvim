@@ -30,8 +30,7 @@ local servers = {
 }
 
 require('mason').setup({})
-require('mason-lspconfig').setup({
-  handlers = {
+require('mason-lspconfig').setup({ handlers = {
     function(server_name)
       if servers[server_name] ~= nil then
         require('lspconfig')[server_name].setup(servers[server_name])
@@ -43,3 +42,4 @@ require('mason-lspconfig').setup({
 })
 
 vim.keymap.set("n", "<leader>pe", "<cmd>lua vim.diagnostic.open_float()<CR>");
+vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>");
