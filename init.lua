@@ -1,1 +1,2 @@
-require("zeu")
+--- Use Lazy package manager
+require("config.lazy")
