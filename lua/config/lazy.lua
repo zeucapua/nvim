@@ -21,6 +21,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>pq", vim.cmd.q)
+vim.keymap.set("n", "<leader>pp", vim.cmd.Explore)
 vim.keymap.set("n", "<leader>pl", vim.cmd.split)
 vim.keymap.set("n", "<leader>pv", vim.cmd.vsplit)
 vim.keymap.set("n", "<leader>[[", vim.diagnostic.goto_prev)
@@ -131,11 +132,6 @@ require("lazy").setup({
       branch = 'master', 
       lazy = false, 
       build = ":TSUpdate"
-    },
-    {
-    'nvim-telescope/telescope.nvim', tag = '0.1.8',
--- or                              , branch = '0.1.x',
-      dependencies = { 'nvim-lua/plenary.nvim' }
     },
   },
   -- Configure any other settings here. See the documentation for more details.
