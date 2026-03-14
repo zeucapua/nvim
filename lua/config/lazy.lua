@@ -30,7 +30,6 @@ vim.keymap.set("n", "<leader>pe", vim.diagnostic.open_float)
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 
 vim.opt.guicursor = ""
-vim.opt.cursorline = true
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -50,7 +49,6 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-
 -- Setup lazy.nvim
 require("lazy").setup({
   -- plugins
@@ -62,7 +60,16 @@ require("lazy").setup({
     {
       "ThePrimeagen/harpoon",
       branch = "harpoon2",
-      dependencies = { "nvim-lua/plenary.nvim" }
+      dependencies = { "nvim-lua/plenary.nvim" },
+      config = function() 
+        local harpoon = require("harpoon")
+        harpoon:setup({
+          settings = {
+            save_on_toggle = true,
+            sync_on_ui_close = true,
+          }
+        })
+      end
     },
     {
       'nvim-lualine/lualine.nvim',

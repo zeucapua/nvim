@@ -19,6 +19,14 @@ hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
   vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
   vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
   vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+  vim.api.nvim_set_hl(0, "IblIndent", { fg = "#3B4048" })
+  vim.api.nvim_set_hl(0, "CursorLine", { bg = "#18181b" })
 end)
 
-require("ibl").setup { indent = { highlight = highlight } }
+vim.opt.cursorline = true
+
+require("ibl").setup { 
+  scope = { highlight = highlight }, 
+  indent = { char = "⋮", highlight = "IblIndent" }
+}
+
